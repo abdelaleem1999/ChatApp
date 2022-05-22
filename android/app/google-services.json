@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "241889067033",
+    "project_id": "awesome-habitat-304916",
+    "storage_bucket": "awesome-habitat-304916.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241889067033:android:6c07f972a1b3486e286a88",
+        "android_client_info": {
+          "package_name": "com.example.bonus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241889067033-mlm7htsn3ic2kkbj1ssi8vgvt3a8p7t0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf_ujUttyeOOn678-QrWbH9sKxhsmB30U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241889067033-mlm7htsn3ic2kkbj1ssi8vgvt3a8p7t0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,1198 @@
+<!doctype html >
+<!--[if IE 8]>    <html class="ie8" lang="en-US"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    <title>What Will Be the Future of Messaging App Communication? - Revenues &amp; Profits</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C600%2C700%7CRoboto%20Condensed%3A400%2C500%2C700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C600%2C700%7CRoboto%20Condensed%3A400%2C500%2C700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A400%2C600%2C700%7CRoboto%20Condensed%3A400%2C500%2C700&#038;display=swap" /></noscript><link rel="stylesheet" href="https://revenuesandprofits.com/wp-content/cache/min/1/7b6fb9f0d2d1c8d2ffb3c471a534acf4.css" media="all" data-minify="1" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="https://revenuesandprofits.com/xmlrpc.php" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="icon" type="image/png" href="https://revenuesandprofits.com/wp-content/uploads/2019/01/Fav-revenue.png">
+	<!-- This site is optimized with the Yoast SEO plugin v18.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="In this post, we’ll explore the future of mobile messaging. Chatbots hit the market a few years ago. Their main goal was to revolutionize and improve customer care experience." />
+	<link rel="canonical" href="https://revenuesandprofits.com/future-of-messaging-app-communication/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="What Will Be the Future of Messaging App Communication? - Revenues &amp; Profits" />
+	<meta property="og:description" content="In this post, we’ll explore the future of mobile messaging. Chatbots hit the market a few years ago. Their main goal was to revolutionize and improve customer care experience." />
+	<meta property="og:url" content="https://revenuesandprofits.com/future-of-messaging-app-communication/" />
+	<meta property="og:site_name" content="Revenues &amp; Profits" />
+	<meta property="article:published_time" content="2020-10-23T11:12:30+00:00" />
+	<meta property="og:image" content="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png" />
+	<meta property="og:image:width" content="1500" />
+	<meta property="og:image:height" content="844" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Mary Gage" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://revenuesandprofits.com/#website","url":"https://revenuesandprofits.com/","name":"Revenues &amp; Profits","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://revenuesandprofits.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://revenuesandprofits.com/future-of-messaging-app-communication/#primaryimage","inLanguage":"en-US","url":"https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png","contentUrl":"https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png","width":1500,"height":844,"caption":"Source: lifewire.com"},{"@type":"WebPage","@id":"https://revenuesandprofits.com/future-of-messaging-app-communication/#webpage","url":"https://revenuesandprofits.com/future-of-messaging-app-communication/","name":"What Will Be the Future of Messaging App Communication? - Revenues &amp; Profits","isPartOf":{"@id":"https://revenuesandprofits.com/#website"},"primaryImageOfPage":{"@id":"https://revenuesandprofits.com/future-of-messaging-app-communication/#primaryimage"},"datePublished":"2020-10-23T11:12:30+00:00","dateModified":"2020-10-23T11:12:30+00:00","author":{"@id":"https://revenuesandprofits.com/#/schema/person/4cc30177d6ad9fa2739473f5f9f6685b"},"description":"In this post, we’ll explore the future of mobile messaging. Chatbots hit the market a few years ago. Their main goal was to revolutionize and improve customer care experience.","breadcrumb":{"@id":"https://revenuesandprofits.com/future-of-messaging-app-communication/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://revenuesandprofits.com/future-of-messaging-app-communication/"]}]},{"@type":"BreadcrumbList","@id":"https://revenuesandprofits.com/future-of-messaging-app-communication/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://revenuesandprofits.com/"},{"@type":"ListItem","position":2,"name":"What Will Be the Future of Messaging App Communication?"}]},{"@type":"Person","@id":"https://revenuesandprofits.com/#/schema/person/4cc30177d6ad9fa2739473f5f9f6685b","name":"Mary Gage","image":{"@type":"ImageObject","@id":"https://revenuesandprofits.com/#personlogo","inLanguage":"en-US","url":"https://revenuesandprofits.com/wp-content/uploads/2020/02/image2-150x150.jpg","contentUrl":"https://revenuesandprofits.com/wp-content/uploads/2020/02/image2-150x150.jpg","caption":"Mary Gage"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Revenues &amp; Profits &raquo; Feed" href="https://revenuesandprofits.com/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<style type="text/css" media="all">
+.wpautoterms-footer{background-color:#ffffff;text-align:center;}
+.wpautoterms-footer a{color:#000000;font-family:Arial, sans-serif;font-size:14px;}
+.wpautoterms-footer .separator{color:#cccccc;font-family:Arial, sans-serif;font-size:14px;}</style>
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 10px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 30px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--regular: 14px;--wp--preset--font-size--larger: 48px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+
+
+
+
+
+
+
+<style id='td-theme-inline-css' type='text/css'>
+    
+        @media (max-width: 767px) {
+            .td-header-desktop-wrap {
+                display: none;
+            }
+        }
+        @media (min-width: 767px) {
+            .td-header-mobile-wrap {
+                display: none;
+            }
+        }
+    
+	
+</style>
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://revenuesandprofits.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js' defer></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5' id='wp-dom-ready-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://revenuesandprofits.com/wp-content/cache/min/1/wp-content/plugins/auto-terms-of-service-and-privacy-policy/js/base.js?ver=1647131446' id='wpautoterms_base-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://revenuesandprofits.com/wp-content/cache/min/1/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1647131446' id='stop-user-enumeration-js' defer></script>
+<script data-minify="1" type='text/javascript' src='https://revenuesandprofits.com/wp-content/cache/min/1/wp-content/plugins/wp-captcha/assets/js/c4wp-public.js?ver=1647131446' id='c4wp-public-js' defer></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js?ver=5.9.3' id='ppress-flatpickr-js' defer></script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js?ver=5.9.3' id='ppress-select2-js' defer></script>
+<link rel="https://api.w.org/" href="https://revenuesandprofits.com/wp-json/" /><link rel="alternate" type="application/json" href="https://revenuesandprofits.com/wp-json/wp/v2/posts/13639" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://revenuesandprofits.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://revenuesandprofits.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.9.3" />
+<link rel='shortlink' href='https://revenuesandprofits.com/?p=13639' />
+<link rel="alternate" type="application/json+oembed" href="https://revenuesandprofits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frevenuesandprofits.com%2Ffuture-of-messaging-app-communication%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://revenuesandprofits.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Frevenuesandprofits.com%2Ffuture-of-messaging-app-communication%2F&#038;format=xml" />
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    			<script type="rocketlazyloadscript">
+				window.tdwGlobal = {"adminUrl":"https:\/\/revenuesandprofits.com\/wp-admin\/","wpRestNonce":"7f150c7aeb","wpRestUrl":"https:\/\/revenuesandprofits.com\/wp-json\/","permalinkStructure":"\/%postname%\/"};
+			</script>
+			
+<!-- JS generated by theme -->
+
+<script type="rocketlazyloadscript">
+    
+    
+
+	    var tdBlocksArray = []; //here we store all the items for the current page
+
+	    //td_block class - each ajax block uses a object of this class for requests
+	    function tdBlock() {
+		    this.id = '';
+		    this.block_type = 1; //block type id (1-234 etc)
+		    this.atts = '';
+		    this.td_column_number = '';
+		    this.td_current_page = 1; //
+		    this.post_count = 0; //from wp
+		    this.found_posts = 0; //from wp
+		    this.max_num_pages = 0; //from wp
+		    this.td_filter_value = ''; //current live filter value
+		    this.is_ajax_running = false;
+		    this.td_user_action = ''; // load more or infinite loader (used by the animation)
+		    this.header_color = '';
+		    this.ajax_pagination_infinite_stop = ''; //show load more at page x
+	    }
+
+
+        // td_js_generator - mini detector
+        (function(){
+            var htmlTag = document.getElementsByTagName("html")[0];
+
+	        if ( navigator.userAgent.indexOf("MSIE 10.0") > -1 ) {
+                htmlTag.className += ' ie10';
+            }
+
+            if ( !!navigator.userAgent.match(/Trident.*rv\:11\./) ) {
+                htmlTag.className += ' ie11';
+            }
+
+	        if ( navigator.userAgent.indexOf("Edge") > -1 ) {
+                htmlTag.className += ' ieEdge';
+            }
+
+            if ( /(iPad|iPhone|iPod)/g.test(navigator.userAgent) ) {
+                htmlTag.className += ' td-md-is-ios';
+            }
+
+            var user_agent = navigator.userAgent.toLowerCase();
+            if ( user_agent.indexOf("android") > -1 ) {
+                htmlTag.className += ' td-md-is-android';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Mac OS X')  ) {
+                htmlTag.className += ' td-md-is-os-x';
+            }
+
+            if ( /chrom(e|ium)/.test(navigator.userAgent.toLowerCase()) ) {
+               htmlTag.className += ' td-md-is-chrome';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Firefox') ) {
+                htmlTag.className += ' td-md-is-firefox';
+            }
+
+            if ( -1 !== navigator.userAgent.indexOf('Safari') && -1 === navigator.userAgent.indexOf('Chrome') ) {
+                htmlTag.className += ' td-md-is-safari';
+            }
+
+            if( -1 !== navigator.userAgent.indexOf('IEMobile') ){
+                htmlTag.className += ' td-md-is-iemobile';
+            }
+
+        })();
+
+
+
+
+        var tdLocalCache = {};
+
+        ( function () {
+            "use strict";
+
+            tdLocalCache = {
+                data: {},
+                remove: function (resource_id) {
+                    delete tdLocalCache.data[resource_id];
+                },
+                exist: function (resource_id) {
+                    return tdLocalCache.data.hasOwnProperty(resource_id) && tdLocalCache.data[resource_id] !== null;
+                },
+                get: function (resource_id) {
+                    return tdLocalCache.data[resource_id];
+                },
+                set: function (resource_id, cachedData) {
+                    tdLocalCache.remove(resource_id);
+                    tdLocalCache.data[resource_id] = cachedData;
+                }
+            };
+        })();
+
+    
+    
+var td_viewport_interval_list=[{"limitBottom":767,"sidebarWidth":251},{"limitBottom":1023,"sidebarWidth":339}];
+var tdc_is_installed="yes";
+var td_ajax_url="https:\/\/revenuesandprofits.com\/wp-admin\/admin-ajax.php?td_theme_name=Newsmag&v=5.2";
+var td_get_template_directory_uri="https:\/\/revenuesandprofits.com\/wp-content\/plugins\/td-composer\/legacy\/common";
+var tds_snap_menu="smart_snap_always";
+var tds_logo_on_sticky="";
+var tds_header_style="7";
+var td_please_wait="Please wait...";
+var td_email_user_pass_incorrect="User or password incorrect!";
+var td_email_user_incorrect="Email or username incorrect!";
+var td_email_incorrect="Email incorrect!";
+var td_user_incorrect="Username incorrect!";
+var td_email_user_empty="Email or username empty!";
+var td_pass_empty="Pass empty!";
+var td_pass_pattern_incorrect="Invalid Pass Pattern!";
+var td_retype_pass_incorrect="Retyped Pass incorrect!";
+var tds_more_articles_on_post_enable="";
+var tds_more_articles_on_post_time_to_wait="";
+var tds_more_articles_on_post_pages_distance_from_top=0;
+var tds_theme_color_site_wide="#008ac2";
+var tds_smart_sidebar="";
+var tdThemeName="Newsmag";
+var td_magnific_popup_translation_tPrev="Previous (Left arrow key)";
+var td_magnific_popup_translation_tNext="Next (Right arrow key)";
+var td_magnific_popup_translation_tCounter="%curr% of %total%";
+var td_magnific_popup_translation_ajax_tError="The content from %url% could not be loaded.";
+var td_magnific_popup_translation_image_tError="The image #%curr% could not be loaded.";
+var tdBlockNonce="9fe3196275";
+var tdDateNamesI18n={"month_names":["January","February","March","April","May","June","July","August","September","October","November","December"],"month_names_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"day_names":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"day_names_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]};
+var td_ad_background_click_link="";
+var td_ad_background_click_target="";
+</script>
+
+
+<!-- Header style compiled by theme -->
+
+<style>
+    
+
+body {
+	background-color:#232323;
+}
+.td-header-border:before,
+    .td-trending-now-title,
+    .td_block_mega_menu .td_mega_menu_sub_cats .cur-sub-cat,
+    .td-post-category:hover,
+    .td-header-style-2 .td-header-sp-logo,
+    .td-next-prev-wrap a:hover i,
+    .page-nav .current,
+    .widget_calendar tfoot a:hover,
+    .td-footer-container .widget_search .wpb_button:hover,
+    .td-scroll-up-visible,
+    .dropcap,
+    .td-category a,
+    input[type="submit"]:hover,
+    .td-post-small-box a:hover,
+    .td-404-sub-sub-title a:hover,
+    .td-rating-bar-wrap div,
+    .td_top_authors .td-active .td-author-post-count,
+    .td_top_authors .td-active .td-author-comments-count,
+    .td_smart_list_3 .td-sml3-top-controls i:hover,
+    .td_smart_list_3 .td-sml3-bottom-controls i:hover,
+    .td_wrapper_video_playlist .td_video_controls_playlist_wrapper,
+    .td-read-more a:hover,
+    .td-login-wrap .btn,
+    .td_display_err,
+    .td-header-style-6 .td-top-menu-full,
+    #bbpress-forums button:hover,
+    #bbpress-forums .bbp-pagination .current,
+    .bbp_widget_login .button:hover,
+    .header-search-wrap .td-drop-down-search .btn:hover,
+    .td-post-text-content .more-link-wrap:hover a,
+    #buddypress div.item-list-tabs ul li > a span,
+    #buddypress div.item-list-tabs ul li > a:hover span,
+    #buddypress input[type=submit]:hover,
+    #buddypress a.button:hover span,
+    #buddypress div.item-list-tabs ul li.selected a span,
+    #buddypress div.item-list-tabs ul li.current a span,
+    #buddypress input[type=submit]:focus,
+    .td-grid-style-3 .td-big-grid-post .td-module-thumb a:last-child:before,
+    .td-grid-style-4 .td-big-grid-post .td-module-thumb a:last-child:before,
+    .td-grid-style-5 .td-big-grid-post .td-module-thumb:after,
+    .td_category_template_2 .td-category-siblings .td-category a:hover,
+    .td-weather-week:before,
+    .td-weather-information:before,
+     .td_3D_btn,
+    .td_shadow_btn,
+    .td_default_btn,
+    .td_square_btn, 
+    .td_outlined_btn:hover {
+        background-color: #008ac2;
+    }
+
+    @media (max-width: 767px) {
+        .td-category a.td-current-sub-category {
+            background-color: #008ac2;
+        }
+    }
+
+    .woocommerce .onsale,
+    .woocommerce .woocommerce a.button:hover,
+    .woocommerce-page .woocommerce .button:hover,
+    .single-product .product .summary .cart .button:hover,
+    .woocommerce .woocommerce .product a.button:hover,
+    .woocommerce .product a.button:hover,
+    .woocommerce .product #respond input#submit:hover,
+    .woocommerce .checkout input#place_order:hover,
+    .woocommerce .woocommerce.widget .button:hover,
+    .woocommerce .woocommerce-message .button:hover,
+    .woocommerce .woocommerce-error .button:hover,
+    .woocommerce .woocommerce-info .button:hover,
+    .woocommerce.widget .ui-slider .ui-slider-handle,
+    .vc_btn-black:hover,
+	.wpb_btn-black:hover,
+	.item-list-tabs .feed:hover a,
+	.td-smart-list-button:hover {
+    	background-color: #008ac2;
+    }
+
+    .td-header-sp-top-menu .top-header-menu > .current-menu-item > a,
+    .td-header-sp-top-menu .top-header-menu > .current-menu-ancestor > a,
+    .td-header-sp-top-menu .top-header-menu > .current-category-ancestor > a,
+    .td-header-sp-top-menu .top-header-menu > li > a:hover,
+    .td-header-sp-top-menu .top-header-menu > .sfHover > a,
+    .top-header-menu ul .current-menu-item > a,
+    .top-header-menu ul .current-menu-ancestor > a,
+    .top-header-menu ul .current-category-ancestor > a,
+    .top-header-menu ul li > a:hover,
+    .top-header-menu ul .sfHover > a,
+    .sf-menu ul .td-menu-item > a:hover,
+    .sf-menu ul .sfHover > a,
+    .sf-menu ul .current-menu-ancestor > a,
+    .sf-menu ul .current-category-ancestor > a,
+    .sf-menu ul .current-menu-item > a,
+    .td_module_wrap:hover .entry-title a,
+    .td_mod_mega_menu:hover .entry-title a,
+    .footer-email-wrap a,
+    .widget a:hover,
+    .td-footer-container .widget_calendar #today,
+    .td-category-pulldown-filter a.td-pulldown-category-filter-link:hover,
+    .td-load-more-wrap a:hover,
+    .td-post-next-prev-content a:hover,
+    .td-author-name a:hover,
+    .td-author-url a:hover,
+    .td_mod_related_posts:hover .entry-title a,
+    .td-search-query,
+    .header-search-wrap .td-drop-down-search .result-msg a:hover,
+    .td_top_authors .td-active .td-authors-name a,
+    .post blockquote p,
+    .td-post-content blockquote p,
+    .page blockquote p,
+    .comment-list cite a:hover,
+    .comment-list cite:hover,
+    .comment-list .comment-reply-link:hover,
+    a,
+    .white-menu #td-header-menu .sf-menu > li > a:hover,
+    .white-menu #td-header-menu .sf-menu > .current-menu-ancestor > a,
+    .white-menu #td-header-menu .sf-menu > .current-menu-item > a,
+    .td_quote_on_blocks,
+    #bbpress-forums .bbp-forum-freshness a:hover,
+    #bbpress-forums .bbp-topic-freshness a:hover,
+    #bbpress-forums .bbp-forums-list li a:hover,
+    #bbpress-forums .bbp-forum-title:hover,
+    #bbpress-forums .bbp-topic-permalink:hover,
+    #bbpress-forums .bbp-topic-started-by a:hover,
+    #bbpress-forums .bbp-topic-started-in a:hover,
+    #bbpress-forums .bbp-body .super-sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums .bbp-body .sticky li.bbp-topic-title .bbp-topic-permalink,
+    #bbpress-forums #subscription-toggle a:hover,
+    #bbpress-forums #favorite-toggle a:hover,
+    .woocommerce-account .woocommerce-MyAccount-navigation a:hover,
+    .widget_display_replies .bbp-author-name,
+    .widget_display_topics .bbp-author-name,
+    .archive .widget_archive .current,
+    .archive .widget_archive .current a,
+    .td-subcategory-header .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
+    .td-subcategory-header .td-category-siblings .td-subcat-dropdown a:hover,
+    .td-pulldown-filter-display-option:hover,
+    .td-pulldown-filter-display-option .td-pulldown-filter-link:hover,
+    .td_normal_slide .td-wrapper-pulldown-filter .td-pulldown-filter-list a:hover,
+    #buddypress ul.item-list li div.item-title a:hover,
+    .td_block_13 .td-pulldown-filter-list a:hover,
+    .td_smart_list_8 .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
+    .td_smart_list_8 .td-smart-list-dropdown-wrap .td-smart-list-button:hover i,
+    .td-sub-footer-container a:hover,
+    .td-instagram-user a,
+     .td_outlined_btn {
+        color: #008ac2;
+    }
+
+    .td-mega-menu .wpb_content_element li a:hover,
+    .td_login_tab_focus {
+        color: #008ac2 !important;
+    }
+
+    .td-next-prev-wrap a:hover i,
+    .page-nav .current,
+    .widget_tag_cloud a:hover,
+    .post .td_quote_box,
+    .page .td_quote_box,
+    .td-login-panel-title,
+    #bbpress-forums .bbp-pagination .current,
+    .td_category_template_2 .td-category-siblings .td-category a:hover,
+    .page-template-page-pagebuilder-latest .td-instagram-user,
+     .td_outlined_btn {
+        border-color: #008ac2;
+    }
+
+    .td_wrapper_video_playlist .td_video_currently_playing:after,
+    .item-list-tabs .feed:hover {
+        border-color: #008ac2 !important;
+    }
+
+
+    
+    .td-header-sp-top-menu .top-header-menu > li > a,
+    .td-header-sp-top-menu .td_data_time,
+    .td-subscription-active .td-header-sp-top-menu .tds_menu_login .tdw-wml-user,
+    .td-header-sp-top-menu .td-weather-top-widget {
+        color: #ffffff;
+    }
+
+    
+    .top-header-menu > .current-menu-item > a,
+    .top-header-menu > .current-menu-ancestor > a,
+    .top-header-menu > .current-category-ancestor > a,
+    .top-header-menu > li > a:hover,
+    .top-header-menu > .sfHover > a {
+        color: #ff0099 !important;
+    }
+
+    
+    .td-header-sp-top-widget .td-social-icon-wrap i {
+        color: #ffffff;
+    }
+
+    
+    .td-header-sp-top-widget .td-social-icon-wrap i:hover {
+        color: #ff0099;
+    }
+
+    
+    .td-header-main-menu {
+        background-color: #4c89bf;
+    }
+
+    
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: rgba(0,0,0,0.6);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(255,0,153,0.8) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.6)), color-stop(100%, rgba(255,0,153,0.8)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(255,0,153,0.8) 100%);
+        background: -o-linear-gradient(top, rgba(0,0,0,0.6) 0%, @mobileu_gradient_two_mob 100%);
+        background: -ms-linear-gradient(top, rgba(0,0,0,0.6) 0%, rgba(255,0,153,0.8) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(255,0,153,0.8) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,0.6)', endColorstr='rgba(255,0,153,0.8)', GradientType=0 );
+    }
+
+    
+    .mfp-content .td-login-button {
+        color: #ffffff;
+    }
+    
+    .mfp-content .td-login-button:active,
+    .mfp-content .td-login-button:hover {
+        background-color: rgba(255,0,153,0.8);
+    }
+    
+    .mfp-content .td-login-button:active,
+    .mfp-content .td-login-button:hover {
+        color: #ffffff;
+    }
+    
+    .td-footer-container,
+    .td-footer-container .td_module_mx3 .meta-info,
+    .td-footer-container .td_module_14 .meta-info,
+    .td-footer-container .td_module_mx1 .td-block14-border {
+        background-color: #000000;
+    }
+    .td-footer-container .widget_calendar #today {
+    	background-color: transparent;
+    }
+
+    
+    .td-sub-footer-container {
+        background-color: #008ac2;
+    }
+    .td-sub-footer-container:after {
+        background-color: transparent;
+    }
+    .td-sub-footer-container:before {
+        background-color: transparent;
+    }
+    .td-footer-container.td-container {
+        border-bottom-width: 0;
+    }
+
+    
+    .td-sub-footer-container,
+    .td-sub-footer-container a {
+        color: #ffffff;
+    }
+    .td-sub-footer-container li a:before {
+        background-color: #ffffff;
+    }
+
+    
+    .td-subfooter-menu li a:hover {
+        color: rgba(255,255,255,0.9);
+    }
+
+    
+	.footer-text-wrap {
+		font-size:16px;
+	
+	}
+</style>
+
+
+
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "WebSite",
+                    "@id": "https://revenuesandprofits.com/",
+                    "name": "Home"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://revenuesandprofits.com/category/technology/",
+                    "name": "Technology"
+                }
+            }
+            ,{
+                "@type": "ListItem",
+                "position": 3,
+                    "item": {
+                    "@type": "WebPage",
+                    "@id": "https://revenuesandprofits.com/future-of-messaging-app-communication/",
+                    "name": "What Will Be the Future of Messaging App Communication?"                                
+                }
+            }    
+        ]
+    }
+</script>
+	<style id="tdw-css-placeholder"></style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="post-template-default single single-post postid-13639 single-format-standard future-of-messaging-app-communication global-block-template-1 td-newsmag-fashion single_template_3 td-boxed-layout" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+
+        <div class="td-scroll-up  td-hide-scroll-up-on-mob"  style="display:none;"><i class="td-icon-menu-up"></i></div>
+
+    
+    <div class="td-menu-background"></div>
+<div id="td-mobile-nav">
+    <div class="td-mobile-container">
+        <!-- mobile menu top section -->
+        <div class="td-menu-socials-wrap">
+            <!-- socials -->
+            <div class="td-menu-socials">
+                
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Facebook">
+                <i class="td-icon-font td-icon-facebook"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Twitter">
+                <i class="td-icon-font td-icon-twitter"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Vimeo">
+                <i class="td-icon-font td-icon-vimeo"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="VKontakte">
+                <i class="td-icon-font td-icon-vk"></i>
+            </a>
+        </span>
+        <span class="td-social-icon-wrap">
+            <a target="_blank" href="#" title="Youtube">
+                <i class="td-icon-font td-icon-youtube"></i>
+            </a>
+        </span>            </div>
+            <!-- close button -->
+            <div class="td-mobile-close">
+                <a href="#" aria-label="Close"><i class="td-icon-close-mobile"></i></a>
+            </div>
+        </div>
+
+        <!-- login section -->
+        
+        <!-- menu section -->
+        <div class="td-mobile-content">
+            <div class="menu-prvi-container"><ul id="menu-prvi" class="td-mobile-main-menu"><li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-first menu-item-244"><a href="https://revenuesandprofits.com/" data-wpel-link="internal">Home</a></li>
+<li id="menu-item-236" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-236"><a href="https://revenuesandprofits.com/category/business/" data-wpel-link="internal">Business</a></li>
+<li id="menu-item-237" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-237"><a href="https://revenuesandprofits.com/category/healthcare/" data-wpel-link="internal">Healthcare</a></li>
+<li id="menu-item-238" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-238"><a href="https://revenuesandprofits.com/category/internet/" data-wpel-link="internal">Internet</a></li>
+<li id="menu-item-12668" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12668"><a href="https://revenuesandprofits.com/category/real-estate/" data-wpel-link="internal">Real Estate</a></li>
+<li id="menu-item-240" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-240"><a href="https://revenuesandprofits.com/category/money/" data-wpel-link="internal">Money</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-242"><a href="https://revenuesandprofits.com/category/social-network/" data-wpel-link="internal">Social Network</a></li>
+<li id="menu-item-243" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-243"><a href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology</a></li>
+</ul></div>        </div>
+    </div>
+
+    <!-- register/login section -->
+    </div>    <div class="td-search-background"></div>
+<div class="td-search-wrap-mob">
+	<div class="td-drop-down-search">
+		<form method="get" class="td-search-form" action="https://revenuesandprofits.com/">
+			<!-- close button -->
+			<div class="td-search-close">
+				<a href="#"><i class="td-icon-close-mobile"></i></a>
+			</div>
+			<div role="search" class="td-search-input">
+				<span>Search</span>
+				<input id="td-header-search-mob" type="text" value="" name="s" autocomplete="off" />
+			</div>
+		</form>
+		<div id="td-aj-search-mob"></div>
+	</div>
+</div>
+
+    <div id="td-outer-wrap">
+    
+        <div class="td-outer-container">
+        
+            <!--
+Header style 7
+-->
+
+<div class="td-header-wrap td-header-container td-header-style-7">
+    <div class="td-header-row td-header-top-menu">
+        
+    <div class="td-top-bar-container top-bar-style-1">
+        <div class="td-header-sp-top-menu">
+
+    </div>            </div>
+
+<!-- LOGIN MODAL -->
+
+                <div  id="login-form" class="white-popup-block mfp-hide mfp-with-anim">
+                    <div class="td-login-wrap">
+                        <a href="#" aria-label="Back" class="td-back-button"><i class="td-icon-modal-back"></i></a>
+                        <div id="td-login-div" class="td-login-form-div td-display-block">
+                            <div class="td-login-panel-title">Sign in</div>
+                            <div class="td-login-panel-descr">Welcome! Log into your account</div>
+                            <div class="td_display_err"></div>
+                            <form id="loginForm" action="#" method="post">
+                                <div class="td-login-inputs"><input class="td-login-input" autocomplete="username" type="text" name="login_email" id="login_email" value="" required><label for="login_email">your username</label></div>
+                                <div class="td-login-inputs"><input class="td-login-input" autocomplete="current-password" type="password" name="login_pass" id="login_pass" value="" required><label for="login_pass">your password</label></div>
+                                <input type="button" name="login_button" id="login_button" class="wpb_button btn td-login-button" value="Login">
+                                
+                            </form>
+                            <div class="td-login-info-text"><a href="#" id="forgot-pass-link">Forgot your password? Get help</a></div>
+                            
+                            
+                        </div>
+
+                        
+
+                         <div id="td-forgot-pass-div" class="td-login-form-div td-display-none">
+                            <div class="td-login-panel-title">Password recovery</div>
+                            <div class="td-login-panel-descr">Recover your password</div>
+                            <div class="td_display_err"></div>
+                            <form id="forgotpassForm" action="#" method="post">
+                                <div class="td-login-inputs"><input class="td-login-input" type="text" name="forgot_email" id="forgot_email" value="" required><label for="forgot_email">your email</label></div>
+                                <input type="button" name="forgot_button" id="forgot_button" class="wpb_button btn td-login-button" value="Send My Password">
+                            </form>
+                            <div class="td-login-info-text">A password will be e-mailed to you.</div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+
+
+    <div class="td-header-row td-header-header">
+        <div class="td-header-sp-logo">
+            		<a class="td-main-logo" href="https://revenuesandprofits.com/" data-wpel-link="internal">
+			<img width="200" height="126" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20126'%3E%3C/svg%3E" alt="" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png"/><noscript><img width="200" height="126" src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png" alt=""/></noscript>
+			<span class="td-visual-hidden">Revenues &amp; Profits</span>
+		</a>
+		        </div>
+    </div>
+
+    <div class="td-header-menu-wrap">
+        <div class="td-header-row td-header-border td-header-main-menu">
+            <div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#" aria-label="mobile-toggle"><i class="td-icon-font td-icon-mobile"></i></a></div>
+    <div class="td-main-menu-logo td-logo-in-header">
+                <a class="td-main-logo" href="https://revenuesandprofits.com/" data-wpel-link="internal">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20126'%3E%3C/svg%3E" alt="" width="200" height="126" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png"/><noscript><img src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png" alt="" width="200" height="126"/></noscript>
+        </a>
+        </div>
+    <div class="menu-prvi-container"><ul id="menu-prvi-1" class="sf-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-first td-menu-item td-normal-menu menu-item-244"><a href="https://revenuesandprofits.com/" data-wpel-link="internal">Home</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-236"><a href="https://revenuesandprofits.com/category/business/" data-wpel-link="internal">Business</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-237"><a href="https://revenuesandprofits.com/category/healthcare/" data-wpel-link="internal">Healthcare</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-238"><a href="https://revenuesandprofits.com/category/internet/" data-wpel-link="internal">Internet</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-12668"><a href="https://revenuesandprofits.com/category/real-estate/" data-wpel-link="internal">Real Estate</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-240"><a href="https://revenuesandprofits.com/category/money/" data-wpel-link="internal">Money</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category td-menu-item td-normal-menu menu-item-242"><a href="https://revenuesandprofits.com/category/social-network/" data-wpel-link="internal">Social Network</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent td-menu-item td-normal-menu menu-item-243"><a href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology</a></li>
+</ul></div></div>
+
+<div class="td-search-wrapper">
+    <div id="td-top-search">
+        <!-- Search -->
+        <div class="header-search-wrap">
+            <div class="dropdown header-search">
+                <a id="td-header-search-button" href="#" role="button" aria-label="search icon" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+                <a id="td-header-search-button-mob" href="#" role="button" aria-label="search icon" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-search-wrap">
+	<div class="dropdown header-search">
+		<div class="td-drop-down-search">
+			<form method="get" class="td-search-form" action="https://revenuesandprofits.com/">
+				<div role="search" class="td-head-form-search-wrap">
+					<input class="needsclick" id="td-header-search" type="text" value="" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="Search" />
+				</div>
+			</form>
+			<div id="td-aj-search"></div>
+		</div>
+	</div>
+</div>        </div>
+    </div>
+
+    <div class="td-header-container">
+        <div class="td-header-row">
+            <div class="td-header-sp-rec">
+                
+<div class="td-header-ad-wrap  td-ad">
+    
+
+</div>            </div>
+        </div>
+    </div>
+</div><div class="td-container td-post-template-3">
+    <div class="td-container-border">
+        <article id="post-13639" class="post-13639 post type-post status-publish format-standard has-post-thumbnail hentry category-technology tag-ar-messaging tag-communication tag-messaging tag-messenger tag-mms tag-sms tag-viber tag-voice-messaging tag-whatsapp" itemscope itemtype="https://schema.org/Article">
+            <div class="td-pb-row">
+                <div class="td-pb-span12">
+                    <div class="td-post-header td-pb-padding-side">
+                        <div class="entry-crumbs"><span><a title="" class="entry-crumb" href="https://revenuesandprofits.com/" data-wpel-link="internal">Home</a></span> <i class="td-icon-right td-bread-sep"></i> <span><a title="View all posts in Technology" class="entry-crumb" href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology</a></span> <i class="td-icon-right td-bread-sep td-bred-no-url-last"></i> <span class="td-bred-no-url-last">What Will Be the Future of Messaging App Communication?</span></div>
+                        <ul class="td-category"><li class="entry-category"><a href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology</a></li></ul>
+                        <header>
+                            <h1 class="entry-title">What Will Be the Future of Messaging App Communication?</h1>
+
+                            
+
+                            <div class="meta-info">
+
+                                <div class="td-post-author-name"><div class="td-author-by">By</div> <a href="https://revenuesandprofits.com/author/mary-gage/" data-wpel-link="internal">Mary Gage</a><div class="td-author-line"> - </div> </div>                                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2020-10-23T13:12:30+02:00" >October 23, 2020</time></span>                                                                                                <div class="td-post-comments"><a href="https://revenuesandprofits.com/future-of-messaging-app-communication/#respond" data-wpel-link="internal"><i class="td-icon-comments"></i>0</a></div>                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div> <!-- /.td-pb-row -->
+
+            <div class="td-pb-row">
+                                            <div class="td-pb-span8 td-main-content" role="main">
+                                <div class="td-ss-main-content">
+                                    
+    
+    <div class="td-post-featured-image"><figure><img width="1500" height="844" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201500%20844'%3E%3C/svg%3E" data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png 1500w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-300x169.png 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-680x383.png 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-768x432.png 768w" data-lazy-sizes="(max-width: 1500px) 100vw, 1500px" alt="" title="best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png"/><noscript><img width="1500" height="844" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png" srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png 1500w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-300x169.png 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-680x383.png 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41-768x432.png 768w" sizes="(max-width: 1500px) 100vw, 1500px" alt="" title="best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41"/></noscript><figcaption class="wp-caption-text">Source: lifewire.com</figcaption></figure></div>
+    <div class="td-post-content td-pb-padding-side">
+        <p>Some experts say that the future of messaging is now. Today, messaging applications get an absolutely new look. For the past ten years, we all have noticed a continued evolution from simple SMS/MMS to powerful Facebook Messenger, Viber, Whatsapp, etc. Over a billion users around the globe are using messengers today. In current times, it’s the best way to contact each other. However, modern messengers aren’t just simple communication tools; they are also used as a powerful marketing instrument. With more options upping the convenience factor, such mobile apps make our lives easier by replacing online logins, emails, or even customer call centers. It goes without saying that messaging is here to stay!</p>
+<p>If you want to learn how to build chat apps, you have to <a href="https://litslink.com/blog/how-to-build-chat-app-like-whatsapp" data-wpel-link="external">visit website</a>, to find and study a comprehensive guide. In this post, we’ll explore the future of mobile messaging.</p>
+<h2>The Evolution of Online Messengers</h2>
+<figure id="attachment_13641" aria-describedby="caption-attachment-13641" style="width: 640px" class="wp-caption aligncenter"><img class="size-large wp-image-13641" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20426'%3E%3C/svg%3E" alt="" width="640" height="426" data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-680x453.jpeg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-300x200.jpeg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-768x512.jpeg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-1536x1024.jpeg 1536w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532.jpeg 1880w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-680x453.jpeg" /><noscript><img class="size-large wp-image-13641" src="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-680x453.jpeg" alt="" width="640" height="426" srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-680x453.jpeg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-300x200.jpeg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-768x512.jpeg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532-1536x1024.jpeg 1536w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-1310532.jpeg 1880w" sizes="(max-width: 640px) 100vw, 640px" /></noscript><figcaption id="caption-attachment-13641" class="wp-caption-text">Source: pexels.com</figcaption></figure>
+<p>It is clear that messaging app communication is continually growing. However, we can name the following most significant phases:</p>
+<ul>
+<li>Content distribution was the primary goal of messaging applications. People subscribed to newsletters on Facebook Messenger or WhatsApp and looked through regular posts about a specific theme. As a result, companies reached more customers in real-time.</li>
+<li>Providing customer service. Companies realized that messaging platforms are a superb tool that can be used for providing customer service. Clients want to get quick and fast answers to their questions. Companies need to reach more clients.</li>
+<li>Messaging platforms are the best tools that can provide both customers and companies with an immediate solution. For example, such well-known messaging platforms as Whatsapp and Facebook focused on developing robust business solutions. For example, WhatsApp released two absolutely different business solutions that were focused on providing dialogue-based customer services.</li>
+<li>Conversational marketing is the final stage of <a href="https://www.dummies.com/business/marketing/social-media-marketing/using-facebook-messenger-communicate-customers/" data-wpel-link="external">messenger communication</a>.</li>
+</ul>
+<h2>Rise of Machines</h2>
+<figure id="attachment_13642" aria-describedby="caption-attachment-13642" style="width: 640px" class="wp-caption aligncenter"><img class="size-large wp-image-13642" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20256'%3E%3C/svg%3E" alt="" width="640" height="256" data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-680x272.png 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-300x120.png 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-768x308.png 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot.jpg 1501w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-680x272.png" /><noscript><img class="size-large wp-image-13642" src="https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-680x272.png" alt="" width="640" height="256" srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-680x272.png 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-300x120.png 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot-768x308.png 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/chatbot.jpg 1501w" sizes="(max-width: 640px) 100vw, 640px" /></noscript><figcaption id="caption-attachment-13642" class="wp-caption-text">Source: freshdesk.com</figcaption></figure>
+<p>Chatbots hit the market a few years ago. Their main goal was to revolutionize and improve customer care experience. As we can see, this technology is very sophisticated, and some experts even say that chatbots can substitute <a href="https://revenuesandprofits.com/business-communication-tools/" data-wpel-link="internal">human communication</a>. A few years ago, chatbots looked like simple pieces of code, but today, they are powerful artificial intelligence systems that can quickly adapt to absolutely any situation.</p>
+<p>Chatbots have numerous benefits. They can work round-the-clock. Simply put, they can provide 24/7 support on any platform. The more they are used, the better they become. Moreover, they can see a customer’s interaction history with a company; that’s why there’s no need to explain the details of your problem again and again. Chatbots will surely understand.</p>
+<p>You probably think that chatbots’ importance is overestimated because human agents can provide the same customized experience. But in fact, it takes more time for human agents to look through the notes and provide assistance quickly and professionally. Moreover, modern customers actually don’t care whether they are communicating with real people or chatbots. They have only one desire &#8211; to solve their problems as quickly as possible. In fact, it doesn’t matter who’ll be solving it. Besides, there’s no need to wait on hold for 5, 10, or 20 minutes until a human agent is available. Chatbots can easily solve any problem right after you contact a website.</p>
+<h2>Chat Is Our Future</h2>
+<figure id="attachment_13643" aria-describedby="caption-attachment-13643" style="width: 640px" class="wp-caption aligncenter"><img class="size-large wp-image-13643" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20480'%3E%3C/svg%3E" alt="" width="640" height="480" data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-680x510.jpeg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-300x225.jpeg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-768x576.jpeg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-1536x1152.jpeg 1536w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-100x75.jpeg 100w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-238x178.jpeg 238w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530.jpeg 1733w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-680x510.jpeg" /><noscript><img class="size-large wp-image-13643" src="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-680x510.jpeg" alt="" width="640" height="480" srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-680x510.jpeg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-300x225.jpeg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-768x576.jpeg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-1536x1152.jpeg 1536w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-100x75.jpeg 100w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530-238x178.jpeg 238w, https://revenuesandprofits.com/wp-content/uploads/2020/10/pexels-photo-288530.jpeg 1733w" sizes="(max-width: 640px) 100vw, 640px" /></noscript><figcaption id="caption-attachment-13643" class="wp-caption-text">Source: pexels.com</figcaption></figure>
+<p>Millennials can’t imagine their lives without chatting. Moreover, they have a love affair with chatting. They don’t make calls; they prefer solving all the problems through chats. In 2019, <a href="https://www.statista.com/statistics/483255/number-of-mobile-messaging-users-worldwide/" data-wpel-link="external">2.5 billion mobile users </a>used mobile messengers. This figure is expected to grow in 2022 to 3 billion users. So we can see that this field is expected to grow.</p>
+<p>Facebook, the owner of two well-known platforms, WhatsApp and Messenger, provided a detailed report that shows that more than 1 billion people are using Messenger today. All these users enjoy messaging, and they aren’t going to stop using this communication method.</p>
+<p>We can see that today, emails are mostly used for business purposes. In everyday life, people prefer messengers. However, messages from employers shouldn’t be boring. They should be inspiring and engaging instead. This is where the use of mobile chatting apps might be the right solution. Rather than sending emails that can be ignored, it would be more effective for a manager to use messengers to communicate with their team. This form of communication is more personal, and you can always monitor whether your employee is reading your messages or not.</p>
+<h2>AR Messaging</h2>
+<figure id="attachment_13644" aria-describedby="caption-attachment-13644" style="width: 640px" class="wp-caption aligncenter"><img class="size-large wp-image-13644" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20640'%3E%3C/svg%3E" alt="" width="640" height="640" data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-680x680.jpg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-300x300.jpg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-150x150.jpg 150w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-768x768.jpg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS.jpg 1414w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-680x680.jpg" /><noscript><img class="size-large wp-image-13644" src="https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-680x680.jpg" alt="" width="640" height="640" srcset="https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-680x680.jpg 680w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-300x300.jpg 300w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-150x150.jpg 150w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS-768x768.jpg 768w, https://revenuesandprofits.com/wp-content/uploads/2020/10/SMS.jpg 1414w" sizes="(max-width: 640px) 100vw, 640px" /></noscript><figcaption id="caption-attachment-13644" class="wp-caption-text">Source: mobilemarketingwatch.com</figcaption></figure>
+<p>Today, we have the functionality allowing us to send text messages, audio/video, or animated gifs via mobile messaging. However, this form of communication will be even more popular when <a href="https://edition.cnn.com/interactive/2020/03/business/what-is-5g/index.html" data-wpel-link="external">5G provides </a>us with more bandwidth. But experts also predict the development of instant voice messaging. Simply put, users can stay connected to each other in a voice channel. When one person talks, the other one can listen. For example, just imagine the situation when two friends are discussing the latest fashion trends. One woman tries a dress with augmented reality, and her friend can immediately see an image and give feedback. Sounds great, right?</p>
+<p>It is also expected that in the next decade, people will be able to create 3D projections and AI-generated avatars. But the greatest benefit of this achievement is that there’s no need to have professional editing skills to make them. Users can create these avatars with the help of AI-powered mobile apps. This achievement will undoubtedly influence businesses too because this allows brands to communicate via avatars.</p>
+<p>By 2040, we’ll also have technology that can recreate experiences from one person to another (warm beach breeze or windy weather). After that, it will be possible to share them over various mobile messaging platforms. However, a lot of this is impossible without 5G. Incorporating 5G is the foremost step towards achieving that goal.</p>
+<p>Overall, we can see that online messengers are the future of modern communication. They won’t fall into oblivion in the next ten years. However, they will undergo significant changes!</p>
+<div class="crp_related  "><h4>Related Posts:</h4><ul><li><a href="https://revenuesandprofits.com/using-whatsapp-for-business-communication/" class="crp_link post-20632" data-wpel-link="internal"><span class="crp_title">7 Pros and Cons of Using WhatsApp for Your Business&hellip;</span></a></li><li><a href="https://revenuesandprofits.com/business-communication-tools/" class="crp_link post-11455" data-wpel-link="internal"><span class="crp_title">5 Business Communication Tools You Should Use To Get In&hellip;</span></a></li><li><a href="https://revenuesandprofits.com/keep-in-touch-with-employees-during-covid-19/" class="crp_link post-9849" data-wpel-link="internal"><span class="crp_title">5 Best Ways to Keep in Touch with Employees During COVID-19</span></a></li><li><a href="https://revenuesandprofits.com/why-e-mail-marketing-is-irreplaceable-for-small-business-in-2019/" class="crp_link post-5809" data-wpel-link="internal"><span class="crp_title">Why E-mail Marketing is Irreplaceable for Small Business in&hellip;</span></a></li><li><a href="https://revenuesandprofits.com/how-can-mass-text-messaging-help-make-your-business-more-profit-driven/" class="crp_link post-6304" data-wpel-link="internal"><span class="crp_title">How Can Mass Text Messaging Help Make Your Business More&hellip;</span></a></li><li><a href="https://revenuesandprofits.com/social-intranet-software-for-business/" class="crp_link post-19587" data-wpel-link="internal"><span class="crp_title">7 Benefits to Social Intranet Software for Your Business</span></a></li><li><a href="https://revenuesandprofits.com/business-benefits-of-logistics-app-development/" class="crp_link post-7393" data-wpel-link="internal"><span class="crp_title">Business Benefits of Logistics App Development</span></a></li><li><a href="https://revenuesandprofits.com/turn-customer-interactions-in-connections/" class="crp_link post-22052" data-wpel-link="internal"><span class="crp_title">How To Turn Customer Interactions Into Meaningful&hellip;</span></a></li><li><a href="https://revenuesandprofits.com/what-is-managed-it-service/" class="crp_link post-4135" data-wpel-link="internal"><span class="crp_title">What is Managed IT Service?</span></a></li><li><a href="https://revenuesandprofits.com/five-things-to-know-about-forming-strategic-partnerships/" class="crp_link post-6113" data-wpel-link="internal"><span class="crp_title">Five Things to Know About Forming Strategic Partnerships</span></a></li></ul><div class="crp_clear"></div></div>    </div>
+
+
+    <footer>
+                
+        <div class="td-post-source-tags td-pb-padding-side">
+                        <ul class="td-tags td-post-small-box clearfix"><li><span>TAGS</span></li><li><a href="https://revenuesandprofits.com/tag/ar-messaging/" data-wpel-link="internal">AR Messaging</a></li><li><a href="https://revenuesandprofits.com/tag/communication/" data-wpel-link="internal">Communication</a></li><li><a href="https://revenuesandprofits.com/tag/messaging/" data-wpel-link="internal">messaging</a></li><li><a href="https://revenuesandprofits.com/tag/messenger/" data-wpel-link="internal">Messenger</a></li><li><a href="https://revenuesandprofits.com/tag/mms/" data-wpel-link="internal">MMS</a></li><li><a href="https://revenuesandprofits.com/tag/sms/" data-wpel-link="internal">sms</a></li><li><a href="https://revenuesandprofits.com/tag/viber/" data-wpel-link="internal">Viber</a></li><li><a href="https://revenuesandprofits.com/tag/voice-messaging/" data-wpel-link="internal">voice messaging</a></li><li><a href="https://revenuesandprofits.com/tag/whatsapp/" data-wpel-link="internal">Whatsapp</a></li></ul>        </div>
+
+        <div class="td-post-sharing-bottom td-pb-padding-side"></div>        <div class="td-block-row td-post-next-prev"><div class="td-block-span6 td-post-prev-post"><div class="td-post-next-prev-content"><span>Previous article</span><a href="https://revenuesandprofits.com/health-insurance-challenge/" data-wpel-link="internal">What Will Be the Biggest Health Insurance Challenge in 2022?</a></div></div><div class="td-next-prev-separator"></div><div class="td-block-span6 td-post-next-post"><div class="td-post-next-prev-content"><span>Next article</span><a href="https://revenuesandprofits.com/why-being-open-minded-is-important/" data-wpel-link="internal">Why Being Open Minded In Business Is Important</a></div></div></div>        <div class="author-box-wrap"><a href="https://revenuesandprofits.com/author/mary-gage/" aria-label="author-photo" data-wpel-link="internal"><img data-del="avatar" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2096%2096'%3E%3C/svg%3E" class='avatar pp-user-avatar avatar-96 photo ' height='96' width='96' data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2020/02/image2-150x150.jpg"/><noscript><img data-del="avatar" src='https://revenuesandprofits.com/wp-content/uploads/2020/02/image2-150x150.jpg' class='avatar pp-user-avatar avatar-96 photo ' height='96' width='96'/></noscript></a><div class="desc"><div class="td-author-name vcard author"><span class="fn"><a href="https://revenuesandprofits.com/author/mary-gage/" data-wpel-link="internal">Mary Gage</a></span></div><div class="td-author-description"></div><div class="td-author-social"></div><div class="clearfix"></div></div></div>	    <span class="td-page-meta" itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Mary Gage"><meta itemprop="url" content="https://revenuesandprofits.com/author/mary-gage/"></span><meta itemprop="datePublished" content="2020-10-23T13:12:30+02:00"><meta itemprop="dateModified" content="2020-10-23T13:12:30+02:00"><meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" itemid="https://revenuesandprofits.com/future-of-messaging-app-communication/"/><span class="td-page-meta" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><span class="td-page-meta" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png"></span><meta itemprop="name" content="Revenues &amp; Profits"></span><meta itemprop="headline " content="What Will Be the Future of Messaging App Communication?"><span class="td-page-meta" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://revenuesandprofits.com/wp-content/uploads/2020/10/best-mobile-messaging-apps-2654839-130c8f6f391542fc84e19f48aee01e41.png"><meta itemprop="width" content="1500"><meta itemprop="height" content="844"></span>    </footer>
+
+    <script type="rocketlazyloadscript">var block_tdi_3 = new tdBlock();
+block_tdi_3.id = "tdi_3";
+block_tdi_3.atts = '{"limit":3,"ajax_pagination":"next_prev","live_filter":"cur_post_same_tags","td_ajax_filter_type":"td_custom_related","class":"tdi_3","td_column_number":3,"block_type":"td_block_related_posts","live_filter_cur_post_id":13639,"live_filter_cur_post_author":"11","block_template_id":"","header_color":"","ajax_pagination_infinite_stop":"","offset":"","td_ajax_preloading":"","td_filter_default_txt":"","td_ajax_filter_ids":"","el_class":"","color_preset":"","border_top":"","css":"","tdc_css":"","tdc_css_class":"tdi_3","tdc_css_class_style":"tdi_3_rand_style"}';
+block_tdi_3.td_column_number = "3";
+block_tdi_3.block_type = "td_block_related_posts";
+block_tdi_3.post_count = "3";
+block_tdi_3.found_posts = "24";
+block_tdi_3.header_color = "";
+block_tdi_3.ajax_pagination_infinite_stop = "";
+block_tdi_3.max_num_pages = "8";
+tdBlocksArray.push(block_tdi_3);
+</script><div class="td_block_wrap td_block_related_posts tdi_3 td_with_ajax_pagination td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_3" ><h4 class="td-related-title"><a id="tdi_4" class="td-related-left td-cur-simple-item" data-td_filter_value="" data-td_block_id="tdi_3" href="#">RELATED ARTICLES</a><a id="tdi_5" class="td-related-right" data-td_filter_value="td_related_more_from_author" data-td_block_id="tdi_3" href="#">MORE FROM AUTHOR</a></h4><div id=tdi_3 class="td_block_inner">
+
+	<div class="td-related-row">
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/change-management-obstacles/" rel="bookmark" class="td-image-wrap " title="Avoid These 5 Change Management Obstacles" data-wpel-link="internal"><img width="238" height="178" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20238%20178'%3E%3C/svg%3E"  data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-238x178.webp 238w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-100x75.webp 100w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-265x198.webp 265w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-530x396.webp 530w" data-lazy-sizes="(max-width: 238px) 100vw, 238px"  alt="" title="Avoid These 5 Change Management Obstacles" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-238x178.webp" /><noscript><img width="238" height="178" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-238x178.webp"  srcset="https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-238x178.webp 238w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-100x75.webp 100w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-265x198.webp 265w, https://revenuesandprofits.com/wp-content/uploads/2022/04/Avoid-These-5-Change-Management-Obstacles-530x396.webp 530w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="Avoid These 5 Change Management Obstacles" /></noscript></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/change-management-obstacles/" rel="bookmark" title="Avoid These 5 Change Management Obstacles" data-wpel-link="internal">Avoid These 5 Change Management Obstacles</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/what-is-customer-experience/" rel="bookmark" class="td-image-wrap " title="What Is Customer Experience and How Can You Improve It?" data-wpel-link="internal"><img width="238" height="178" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20238%20178'%3E%3C/svg%3E"  data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-238x178.jpg 238w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-100x75.jpg 100w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-265x198.jpg 265w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-530x396.jpg 530w" data-lazy-sizes="(max-width: 238px) 100vw, 238px"  alt="" title="What Is Customer Experience and How Can You Improve It?" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-238x178.jpg" /><noscript><img width="238" height="178" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-238x178.jpg"  srcset="https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-238x178.jpg 238w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-100x75.jpg 100w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-265x198.jpg 265w, https://revenuesandprofits.com/wp-content/uploads/2021/11/Customer-Experience-530x396.jpg 530w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="What Is Customer Experience and How Can You Improve It?" /></noscript></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/what-is-customer-experience/" rel="bookmark" title="What Is Customer Experience and How Can You Improve It?" data-wpel-link="internal">What Is Customer Experience and How Can You Improve It?</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 -->
+
+	<div class="td-related-span4">
+
+        <div class="td_module_related_posts td-animation-stack td_mod_related_posts">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/using-whatsapp-for-business-communication/" rel="bookmark" class="td-image-wrap " title="7 Pros and Cons of Using WhatsApp for Your Business Communication" data-wpel-link="internal"><img width="238" height="178" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20238%20178'%3E%3C/svg%3E"  data-lazy-srcset="https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-238x178.jpeg 238w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-100x75.jpeg 100w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-265x198.jpeg 265w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-530x396.jpeg 530w" data-lazy-sizes="(max-width: 238px) 100vw, 238px"  alt="" title="7 Pros and Cons of Using WhatsApp for Your Business Communication" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-238x178.jpeg" /><noscript><img width="238" height="178" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-238x178.jpeg"  srcset="https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-238x178.jpeg 238w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-100x75.jpeg 100w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-265x198.jpeg 265w, https://revenuesandprofits.com/wp-content/uploads/2021/08/WhatsApp-530x396.jpeg 530w" sizes="(max-width: 238px) 100vw, 238px"  alt="" title="7 Pros and Cons of Using WhatsApp for Your Business Communication" /></noscript></a></div>                            </div>
+            <div class="item-details">
+                <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/using-whatsapp-for-business-communication/" rel="bookmark" title="7 Pros and Cons of Using WhatsApp for Your Business Communication" data-wpel-link="internal">7 Pros and Cons of Using WhatsApp for Your Business Communication</a></h3>            </div>
+        </div>
+        
+	</div> <!-- ./td-related-span4 --></div><!--./row-fluid--></div><div class="td-next-prev-wrap"><a href="#" class="td-ajax-prev-page ajax-page-disabled" aria-label="prev-page" id="prev-page-tdi_3" data-td_block_id="tdi_3"><i class="td-next-prev-icon td-icon-font td-icon-menu-left"></i></a><a href="#" class="td-ajax-next-page" aria-label="next-page" id="next-page-tdi_3" data-td_block_id="tdi_3"><i class="td-next-prev-icon td-icon-font td-icon-menu-right"></i></a></div></div> <!-- ./block -->
+                                </div>
+                            </div>
+                            <div class="td-pb-span4 td-main-sidebar td-pb-border-top" role="complementary">
+                                <div class="td-ss-main-sidebar">
+                                    <div class="td_block_wrap td_block_3 td_block_widget tdi_6 td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_6" >
+<style>
+/* custom css */
+.tdi_6 .td-post-vid-time{
+					display: block;
+				}
+</style><script type="rocketlazyloadscript">var block_tdi_6 = new tdBlock();
+block_tdi_6.id = "tdi_6";
+block_tdi_6.atts = '{"custom_title":"","custom_url":"","block_template_id":"","header_color":"#","header_text_color":"#","border_top":"","color_preset":"","m1_tl":"","limit":"5","offset":"","el_class":"","post_ids":"","category_id":"","category_ids":"","tag_slug":"","autors_id":"","installed_post_types":"","sort":"","td_ajax_filter_type":"","td_ajax_filter_ids":"","td_filter_default_txt":"All","td_ajax_preloading":"","ajax_pagination":"","ajax_pagination_infinite_stop":"","class":"td_block_widget tdi_6","block_type":"td_block_3","separator":"","title_tag":"","m1_title_tag":"","show_modified_date":"","video_popup":"","video_rec":"","video_rec_title":"","show_vid_t":"block","f_header_font_header":"","f_header_font_title":"Block header","f_header_font_settings":"","f_header_font_family":"","f_header_font_size":"","f_header_font_line_height":"","f_header_font_style":"","f_header_font_weight":"","f_header_font_transform":"","f_header_font_spacing":"","f_header_":"","f_ajax_font_title":"Ajax categories","f_ajax_font_settings":"","f_ajax_font_family":"","f_ajax_font_size":"","f_ajax_font_line_height":"","f_ajax_font_style":"","f_ajax_font_weight":"","f_ajax_font_transform":"","f_ajax_font_spacing":"","f_ajax_":"","f_more_font_title":"Load more button","f_more_font_settings":"","f_more_font_family":"","f_more_font_size":"","f_more_font_line_height":"","f_more_font_style":"","f_more_font_weight":"","f_more_font_transform":"","f_more_font_spacing":"","f_more_":"","m1f_title_font_header":"","m1f_title_font_title":"Article title","m1f_title_font_settings":"","m1f_title_font_family":"","m1f_title_font_size":"","m1f_title_font_line_height":"","m1f_title_font_style":"","m1f_title_font_weight":"","m1f_title_font_transform":"","m1f_title_font_spacing":"","m1f_title_":"","m1f_cat_font_title":"Article category tag","m1f_cat_font_settings":"","m1f_cat_font_family":"","m1f_cat_font_size":"","m1f_cat_font_line_height":"","m1f_cat_font_style":"","m1f_cat_font_weight":"","m1f_cat_font_transform":"","m1f_cat_font_spacing":"","m1f_cat_":"","m1f_meta_font_title":"Article meta info","m1f_meta_font_settings":"","m1f_meta_font_family":"","m1f_meta_font_size":"","m1f_meta_font_line_height":"","m1f_meta_font_style":"","m1f_meta_font_weight":"","m1f_meta_font_transform":"","m1f_meta_font_spacing":"","m1f_meta_":"","css":"","tdc_css":"","td_column_number":1,"tdc_css_class":"tdi_6","tdc_css_class_style":"tdi_6_rand_style"}';
+block_tdi_6.td_column_number = "1";
+block_tdi_6.block_type = "td_block_3";
+block_tdi_6.post_count = "5";
+block_tdi_6.found_posts = "2297";
+block_tdi_6.header_color = "#";
+block_tdi_6.ajax_pagination_infinite_stop = "";
+block_tdi_6.max_num_pages = "460";
+tdBlocksArray.push(block_tdi_6);
+</script><div id=tdi_6 class="td_block_inner">
+
+	<div class="td-block-span12">
+
+        <div class="td_module_1 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/most-underrated-cryptocurrencies/" rel="bookmark" class="td-image-wrap " title="5 Most Underrated Cryptocurrencies in the Last 2 Years" data-wpel-link="internal"><img width="300" height="160" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20160'%3E%3C/svg%3E"   alt="" title="5 Most Underrated Cryptocurrencies in the Last 2 Years" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/5-Most-Underrated-Cryptocurrencies-in-the-Last-2-Years-300x160.jpg" /><noscript><img width="300" height="160" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/5-Most-Underrated-Cryptocurrencies-in-the-Last-2-Years-300x160.jpg"   alt="" title="5 Most Underrated Cryptocurrencies in the Last 2 Years" /></noscript></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/most-underrated-cryptocurrencies/" rel="bookmark" title="5 Most Underrated Cryptocurrencies in the Last 2 Years" data-wpel-link="internal">5 Most Underrated Cryptocurrencies in the Last 2 Years</a></h3>
+            <div class="meta-info">
+                                <span class="td-post-author-name"><a href="https://revenuesandprofits.com/author/paul-senbonzakura/" data-wpel-link="internal">Paul Senbonzakura</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-04-19T10:31:35+02:00" >April 19, 2022</time></span>                <span class="td-module-comments"><a href="https://revenuesandprofits.com/most-underrated-cryptocurrencies/#respond" data-wpel-link="internal">0</a></span>            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_1 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/bitcoin-trading-robots/" rel="bookmark" class="td-image-wrap " title="7 Tips and Rules to Follow When Using Bitcoin Trading Robots" data-wpel-link="internal"><img width="300" height="160" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20160'%3E%3C/svg%3E"   alt="" title="7 Tips and Rules to Follow When Using Bitcoin Trading Robots" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Bitcoin-Trading-Robots-300x160.webp" /><noscript><img width="300" height="160" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Bitcoin-Trading-Robots-300x160.webp"   alt="" title="7 Tips and Rules to Follow When Using Bitcoin Trading Robots" /></noscript></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/bitcoin-trading-robots/" rel="bookmark" title="7 Tips and Rules to Follow When Using Bitcoin Trading Robots" data-wpel-link="internal">7 Tips and Rules to Follow When Using Bitcoin Trading Robots</a></h3>
+            <div class="meta-info">
+                                <span class="td-post-author-name"><a href="https://revenuesandprofits.com/author/paul-senbonzakura/" data-wpel-link="internal">Paul Senbonzakura</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-04-18T14:37:46+02:00" >April 18, 2022</time></span>                <span class="td-module-comments"><a href="https://revenuesandprofits.com/bitcoin-trading-robots/#respond" data-wpel-link="internal">0</a></span>            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_1 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/every-mailer-should-hire-list-broker/" rel="bookmark" class="td-image-wrap " title="Reasons Why Every Mailer Should Hire a List Broker" data-wpel-link="internal"><img width="300" height="160" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20160'%3E%3C/svg%3E"   alt="" title="Reasons Why Every Mailer Should Hire a List Broker" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Mailer-300x160.jpeg" /><noscript><img width="300" height="160" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Mailer-300x160.jpeg"   alt="" title="Reasons Why Every Mailer Should Hire a List Broker" /></noscript></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/every-mailer-should-hire-list-broker/" rel="bookmark" title="Reasons Why Every Mailer Should Hire a List Broker" data-wpel-link="internal">Reasons Why Every Mailer Should Hire a List Broker</a></h3>
+            <div class="meta-info">
+                                <span class="td-post-author-name"><a href="https://revenuesandprofits.com/author/bryn-anderson/" data-wpel-link="internal">Bryn Anderson</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-04-18T12:52:00+02:00" >April 18, 2022</time></span>                <span class="td-module-comments"><a href="https://revenuesandprofits.com/every-mailer-should-hire-list-broker/#respond" data-wpel-link="internal">0</a></span>            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_1 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/best-mortgage-for-first-time-home-buyers/" rel="bookmark" class="td-image-wrap " title="Which Mortgage Is Best for First-Time Home Buyers &#8211; 2022 Guide" data-wpel-link="internal"><img width="300" height="160" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20160'%3E%3C/svg%3E"   alt="" title="Which Mortgage Is Best for First-Time Home Buyers &#8211; 2022 Guide" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Home-Buyers-300x160.jpg" /><noscript><img width="300" height="160" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/Home-Buyers-300x160.jpg"   alt="" title="Which Mortgage Is Best for First-Time Home Buyers &#8211; 2022 Guide" /></noscript></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/best-mortgage-for-first-time-home-buyers/" rel="bookmark" title="Which Mortgage Is Best for First-Time Home Buyers &#8211; 2022 Guide" data-wpel-link="internal">Which Mortgage Is Best for First-Time Home Buyers &#8211; 2022 Guide</a></h3>
+            <div class="meta-info">
+                                <span class="td-post-author-name"><a href="https://revenuesandprofits.com/author/bryn-anderson/" data-wpel-link="internal">Bryn Anderson</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-04-18T12:42:04+02:00" >April 18, 2022</time></span>                <span class="td-module-comments"><a href="https://revenuesandprofits.com/best-mortgage-for-first-time-home-buyers/#respond" data-wpel-link="internal">0</a></span>            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 -->
+
+	<div class="td-block-span12">
+
+        <div class="td_module_1 td_module_wrap td-animation-stack ">
+            <div class="td-module-image">
+                <div class="td-module-thumb"><a href="https://revenuesandprofits.com/mergers-and-acquisitions-expert/" rel="bookmark" class="td-image-wrap " title="4 Tips for Becoming a Mergers and Acquisitions Expert" data-wpel-link="internal"><img width="300" height="160" class="entry-thumb" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20160'%3E%3C/svg%3E"   alt="" title="4 Tips for Becoming a Mergers and Acquisitions Expert" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2022/04/4-Tips-for-Becoming-a-Mergers-and-Acquisitions-Expert-300x160.jpg" /><noscript><img width="300" height="160" class="entry-thumb" src="https://revenuesandprofits.com/wp-content/uploads/2022/04/4-Tips-for-Becoming-a-Mergers-and-Acquisitions-Expert-300x160.jpg"   alt="" title="4 Tips for Becoming a Mergers and Acquisitions Expert" /></noscript></a></div>                                            </div>
+
+            <h3 class="entry-title td-module-title"><a href="https://revenuesandprofits.com/mergers-and-acquisitions-expert/" rel="bookmark" title="4 Tips for Becoming a Mergers and Acquisitions Expert" data-wpel-link="internal">4 Tips for Becoming a Mergers and Acquisitions Expert</a></h3>
+            <div class="meta-info">
+                                <span class="td-post-author-name"><a href="https://revenuesandprofits.com/author/paul-senbonzakura/" data-wpel-link="internal">Paul Senbonzakura</a> <span>-</span> </span>                <span class="td-post-date"><time class="entry-date updated td-module-date" datetime="2022-04-16T14:21:34+02:00" >April 16, 2022</time></span>                <span class="td-module-comments"><a href="https://revenuesandprofits.com/mergers-and-acquisitions-expert/#respond" data-wpel-link="internal">0</a></span>            </div>
+
+            
+        </div>
+
+        
+	</div> <!-- ./td-block-span12 --></div></div> <!-- ./block --><aside class="td_block_template_1 widget widget_categories"><h4 class="block-title"><span>Categories</span></h4>
+			<ul>
+					<li class="cat-item cat-item-4668"><a href="https://revenuesandprofits.com/category/art/" data-wpel-link="internal">Art</a>
+</li>
+	<li class="cat-item cat-item-412"><a href="https://revenuesandprofits.com/category/biotechnology/" data-wpel-link="internal">Biotechnology</a>
+</li>
+	<li class="cat-item cat-item-5134"><a href="https://revenuesandprofits.com/category/bitcoins/" data-wpel-link="internal">Bitcoins</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="https://revenuesandprofits.com/category/business/" data-wpel-link="internal">Business</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="https://revenuesandprofits.com/category/business-insights/" data-wpel-link="internal">Business Insights</a>
+</li>
+	<li class="cat-item cat-item-4457"><a href="https://revenuesandprofits.com/category/car/" data-wpel-link="internal">Car</a>
+</li>
+	<li class="cat-item cat-item-1475"><a href="https://revenuesandprofits.com/category/career/" data-wpel-link="internal">Career</a>
+</li>
+	<li class="cat-item cat-item-1098"><a href="https://revenuesandprofits.com/category/consumer-goods/" data-wpel-link="internal">Consumer Goods</a>
+</li>
+	<li class="cat-item cat-item-5184"><a href="https://revenuesandprofits.com/category/cryptocurrencies/" data-wpel-link="internal">Cryptocurrencies</a>
+</li>
+	<li class="cat-item cat-item-5773"><a href="https://revenuesandprofits.com/category/cryptocurrency/" data-wpel-link="internal">Cryptocurrency</a>
+</li>
+	<li class="cat-item cat-item-411"><a href="https://revenuesandprofits.com/category/dow30/" data-wpel-link="internal">Dow30</a>
+</li>
+	<li class="cat-item cat-item-571"><a href="https://revenuesandprofits.com/category/education/" data-wpel-link="internal">Education</a>
+</li>
+	<li class="cat-item cat-item-879"><a href="https://revenuesandprofits.com/category/energetic-efficiency/" data-wpel-link="internal">Energetic Efficiency</a>
+</li>
+	<li class="cat-item cat-item-253"><a href="https://revenuesandprofits.com/category/financials/" data-wpel-link="internal">Financials</a>
+</li>
+	<li class="cat-item cat-item-4717"><a href="https://revenuesandprofits.com/category/games/" data-wpel-link="internal">Games</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="https://revenuesandprofits.com/category/healthcare/" data-wpel-link="internal">Healthcare</a>
+</li>
+	<li class="cat-item cat-item-5087"><a href="https://revenuesandprofits.com/category/home/" data-wpel-link="internal">Home</a>
+</li>
+	<li class="cat-item cat-item-4659"><a href="https://revenuesandprofits.com/category/how-to/" data-wpel-link="internal">How to</a>
+</li>
+	<li class="cat-item cat-item-3129"><a href="https://revenuesandprofits.com/category/industry/" data-wpel-link="internal">Industry</a>
+</li>
+	<li class="cat-item cat-item-278"><a href="https://revenuesandprofits.com/category/information-technology/" data-wpel-link="internal">Information Technology</a>
+</li>
+	<li class="cat-item cat-item-1168"><a href="https://revenuesandprofits.com/category/insurance-company/" data-wpel-link="internal">Insurance Company</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://revenuesandprofits.com/category/internet/" data-wpel-link="internal">Internet</a>
+</li>
+	<li class="cat-item cat-item-5758"><a href="https://revenuesandprofits.com/category/job/" data-wpel-link="internal">Job</a>
+</li>
+	<li class="cat-item cat-item-4270"><a href="https://revenuesandprofits.com/category/law/" data-wpel-link="internal">Law</a>
+</li>
+	<li class="cat-item cat-item-4057"><a href="https://revenuesandprofits.com/category/marketing/" data-wpel-link="internal">Marketing</a>
+</li>
+	<li class="cat-item cat-item-119"><a href="https://revenuesandprofits.com/category/media-entertainment/" data-wpel-link="internal">Media &amp; Entertainment</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="https://revenuesandprofits.com/category/money/" data-wpel-link="internal">Money</a>
+</li>
+	<li class="cat-item cat-item-4301"><a href="https://revenuesandprofits.com/category/music/" data-wpel-link="internal">Music</a>
+</li>
+	<li class="cat-item cat-item-1338"><a href="https://revenuesandprofits.com/category/net-worth/" data-wpel-link="internal">Net Worth</a>
+</li>
+	<li class="cat-item cat-item-5735"><a href="https://revenuesandprofits.com/category/nft/" data-wpel-link="internal">NFT</a>
+</li>
+	<li class="cat-item cat-item-86"><a href="https://revenuesandprofits.com/category/oil-and-gas/" data-wpel-link="internal">Oil and Gas</a>
+</li>
+	<li class="cat-item cat-item-1103"><a href="https://revenuesandprofits.com/category/personal-goods/" data-wpel-link="internal">Personal Goods</a>
+</li>
+	<li class="cat-item cat-item-5320"><a href="https://revenuesandprofits.com/category/property/" data-wpel-link="internal">Property</a>
+</li>
+	<li class="cat-item cat-item-5319"><a href="https://revenuesandprofits.com/category/propoerty/" data-wpel-link="internal">Propoerty</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="https://revenuesandprofits.com/category/rp-analyses/" data-wpel-link="internal">R&amp;P Analyses</a>
+</li>
+	<li class="cat-item cat-item-646"><a href="https://revenuesandprofits.com/category/real-estate/" data-wpel-link="internal">Real Estate</a>
+</li>
+	<li class="cat-item cat-item-102"><a href="https://revenuesandprofits.com/category/social-network/" data-wpel-link="internal">Social Network</a>
+</li>
+	<li class="cat-item cat-item-526"><a href="https://revenuesandprofits.com/category/startup/" data-wpel-link="internal">Startup</a>
+</li>
+	<li class="cat-item cat-item-4478"><a href="https://revenuesandprofits.com/category/style/" data-wpel-link="internal">Style</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology</a>
+</li>
+	<li class="cat-item cat-item-4262"><a href="https://revenuesandprofits.com/category/tips/" data-wpel-link="internal">Tips</a>
+</li>
+	<li class="cat-item cat-item-254"><a href="https://revenuesandprofits.com/category/top-n/" data-wpel-link="internal">Top-n</a>
+</li>
+	<li class="cat-item cat-item-5374"><a href="https://revenuesandprofits.com/category/trading/" data-wpel-link="internal">Trading</a>
+</li>
+	<li class="cat-item cat-item-4357"><a href="https://revenuesandprofits.com/category/travel/" data-wpel-link="internal">Travel</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://revenuesandprofits.com/category/uncategorized/" data-wpel-link="internal">Uncategorized</a>
+</li>
+			</ul>
+
+			</aside>                                </div>
+                            </div>
+                                    </div> <!-- /.td-pb-row -->
+        </article> <!-- /.post -->
+    </div>
+</div> <!-- /.td-container -->
+
+    <!-- Instagram -->
+    
+
+    <!-- Footer -->
+    <div class="td-footer-container td-container">
+
+	<div class="td-pb-row">
+		<div class="td-pb-span12">
+					</div>
+	</div>
+
+	<div class="td-pb-row">
+		<div class="td-pb-span4">
+			<aside class="td_block_template_1 widget widget_text">			<div class="textwidget"><p><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20126'%3E%3C/svg%3E" alt="" width="200" height="126" class="alignnone size-full wp-image-251" data-lazy-src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png" /><noscript><img src="https://revenuesandprofits.com/wp-content/uploads/2019/01/Logo-normal.png" alt="" width="200" height="126" class="alignnone size-full wp-image-251" /></noscript><br />
+Revenues and Profits strive to provide the latest information from tech, business, and financial world.</p>
+</div>
+		</aside><aside class="td_block_template_1 widget widget_text"><h4 class="block-title"><span>Contact Us</span></h4>			<div class="textwidget"><p><span style="color:#ff8c00;"><span style="font-size:16px;"><strong>santosmilewa [at] demotix.com</strong></span></span></p>
+</div>
+		</aside>		</div>
+
+		<div class="td-pb-span4">
+			<div class="td_block_wrap td_block_popular_categories td_block_widget tdi_8 widget widget_categories td-pb-border-top td_block_template_1"  data-td-block-uid="tdi_8" ><ul class="td-pb-padding-side"><li><a href="https://revenuesandprofits.com/category/business/" data-wpel-link="internal">Business<span class="td-cat-no">1079</span></a></li><li><a href="https://revenuesandprofits.com/category/financials/" data-wpel-link="internal">Financials<span class="td-cat-no">438</span></a></li><li><a href="https://revenuesandprofits.com/category/technology/" data-wpel-link="internal">Technology<span class="td-cat-no">353</span></a></li><li><a href="https://revenuesandprofits.com/category/tips/" data-wpel-link="internal">Tips<span class="td-cat-no">118</span></a></li><li><a href="https://revenuesandprofits.com/category/money/" data-wpel-link="internal">Money<span class="td-cat-no">103</span></a></li><li><a href="https://revenuesandprofits.com/category/healthcare/" data-wpel-link="internal">Healthcare<span class="td-cat-no">91</span></a></li><li><a href="https://revenuesandprofits.com/category/information-technology/" data-wpel-link="internal">Information Technology<span class="td-cat-no">91</span></a></li></ul></div> <!-- ./block -->		</div>
+
+		<div class="td-pb-span4">
+			<aside class="td_block_template_1 widget widget_pages"><h4 class="block-title"><span>Pages</span></h4>
+			<ul>
+				<li class="page_item page-item-11"><a href="https://revenuesandprofits.com/about/" data-wpel-link="internal">About</a></li>
+<li class="page_item page-item-12"><a href="https://revenuesandprofits.com/contact/" data-wpel-link="internal">Contact</a></li>
+<li class="page_item page-item-10"><a href="https://revenuesandprofits.com/" data-wpel-link="internal">Home</a></li>
+			</ul>
+
+			</aside>		</div>
+	</div>
+</div>
+
+    <!-- Sub Footer -->
+        </div><!--close td-outer-container-->
+</div><!--close td-outer-wrap-->
+
+
+
+    <!--
+
+        Theme: Newsmag by tagDiv.com 2021
+        Version: 5.2 (rara)
+        Deploy mode: deploy
+        
+        uid: 625f441f34d89
+    -->
+
+    <script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/revenuesandprofits.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"5cb8cf6c5a","disable_ajax_form":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js?ver=3.2.10' id='ppress-frontend-script-js' defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/revenuesandprofits.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' src='https://revenuesandprofits.com/wp-content/plugins/td-composer/legacy/Newsmag/js/tagdiv_theme.min.js?ver=5.2' id='td-site-min-js' defer></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-153108129-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-153108129-1');
+</script>
+
+<!-- JS generated by theme -->
+
+<script>window.addEventListener('DOMContentLoaded', function() {
+    
+
+
+            
+
+	            // if the theme has tdBackstr support, it means this already uses it
+                if ( 'undefined' !== typeof window.tdBackstr ) {
+
+                    (function(){
+                        // the site background td-backstretch jquery object is dynamically added in DOM, and after any translation effects are applied over td-backstretch
+                        var wrapper_image_jquery_obj = jQuery( '<div class=\'backstretch\'></div>' );
+                        var image_jquery_obj = jQuery( '<img class=\'td-backstretch not-parallax\' src=\'https://revenuesandprofits.com/wp-content/uploads/2019/12/World-Conection.jpg\' alt="World Conection">' );
+
+                        wrapper_image_jquery_obj.append( image_jquery_obj );
+
+                        jQuery( 'body' ).prepend( wrapper_image_jquery_obj );
+
+                        var td_backstr_item = new tdBackstr.item();
+
+                        td_backstr_item.wrapper_image_jquery_obj = wrapper_image_jquery_obj;
+                        td_backstr_item.image_jquery_obj = image_jquery_obj;
+
+	                    tdBackstr.add_item( td_backstr_item );
+
+                    })();
+                }
+
+            
+            
+});</script>
+
+<div class="wpautoterms-footer"><p>
+		<a href="https://revenuesandprofits.com/wpautoterms/terms-and-conditions/" data-wpel-link="internal">Terms and Conditions</a><span class="separator"> - </span><a href="https://revenuesandprofits.com/wpautoterms/privacy-policy/" data-wpel-link="internal">Privacy Policy</a></p>
+</div><script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://revenuesandprofits.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1650410527 -->
